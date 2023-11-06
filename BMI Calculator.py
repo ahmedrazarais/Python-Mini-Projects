@@ -3,8 +3,8 @@
 mass=int(input("Enter your weight:"))
 # conditions:
 # weight from 1-40:underweight
-# weight from 41-75:underweight
-# weight from 76 -200:underweight
+# weight from 41-75:Normalweight
+# weight from 76 -200:overweight
 if mass<=40:
     print("You are Underweight\nTake Proper Deit")
 elif 75>=mass>=41:
