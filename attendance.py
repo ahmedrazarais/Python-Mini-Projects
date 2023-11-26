@@ -8,7 +8,7 @@
 print("Enter Your 6 Digit Roll Number for checking attendance:")
 while True:
     psd=int(input("Enter Your 6 Digit Roll-No:"))
-    if 100000<psd<999999:
+    if 000000<=psd<999999:
         break
     else:
         print("Please Enter Appropiate Roll-No")
