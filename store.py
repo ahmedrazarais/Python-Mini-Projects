@@ -20,7 +20,7 @@ if user_choice.lower() == "yes":
     while True:
         password = input("Enter your four-digit password: ")
 
-        if 1000 <= int(password) <= 9999:
+        if 0000 <= int(password) <= 9999:
             break
         else:
             print("Please enter a valid four-digit password.")
