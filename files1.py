@@ -23,3 +23,4 @@ if choice=="yes":
   print(f" You entered these values :{user_info.read()}")         #printing user file
 else:
   print("Alright")
+user_info.close()      # closing the file
