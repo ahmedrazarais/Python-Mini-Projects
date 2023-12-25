@@ -17,33 +17,74 @@
 # Display the top N most frequent words.
 
 
+# print("\t WORD FREQUENCY COUNTER")
+# user_source_file=input("Enter Source File Name With Path:")     # taking user input of source file
+# if not user_source_file:
+#     print("No Data In A File")
+# else:
+#   try:
+#     with open(user_source_file) as file:            #use with so file automatically closed
+#      result=file.read()       # read afile
+
+#      result=result.split()        # splitting on spaces
+#      stop_words=["the", "is", ","]
+#      new = [i for i in result if i not in stop_words]   #listcomprehension for removing specific words                                  
+
+#      final={}                                #empty dictionary
+#      for word in new:                        #loop on list
+#         occurence=new.count(word)           #using list mehtod to count occurence
+#         occurence=str(occurence)
+#         words=word
+#         final.update({word:occurence})      # updating the word with its total occurence        
+#      print("Maximum frequency Word is:")
+#      max_key = max(final, key=lambda k: int(final[k]))      # printing word with highest frequency
+#      print(f"The key with the maximum value is: {max_key}")
+#      user_dest_file=input("Enter Destination File Name With Path:")     # taking user input
+#      with open (user_dest_file,"w+") as new:
+#       for key,value in final.items():       #loop on key pair of dictionary
+#        answer=(f"{key}:{value}")    
+#        new.write(f"{answer}\n")            #writting in destination file
+#      new.seek(0)                             # seek to move cursor to start
+#      print(new.read())                    
+#   except FileNotFoundError:
+#      print("File Not Found You Entered Wrong Path")   
+
+
 print("\t WORD FREQUENCY COUNTER")
-user_source_file=input("Enter Source File Name With Path:")     # taking user input of source file
+
+user_source_file = input("Enter Source File Name With Path:")
+
 if not user_source_file:
     print("No Data In A File")
-
 else:
-  with open(user_source_file) as file:            #use with so file automatically closed
-    result=file.read()       # read afile
+    try:
+        with open(user_source_file) as file:
+            result = file.read()  # read a file
+            result = result.split()  # splitting on spaces
+            stop_words = ["the", "is", ","]
+            new = [i for i in result if i not in stop_words]  # list comprehension for removing specific words
 
-    result=result.split()        # splitting on spaces
-    stop_words=["the", "is", ","]
-    new = [i for i in result if i not in stop_words]   #listcomprehension for removing specific words                                  
+            final = {}  # empty dictionary
+            for word in new:  # loop on list
+                occurrence = new.count(word)  # using list method to count occurrence
+                occurrence = str(occurrence)
+                final.update({word: occurrence})  # updating the word with its total occurrence
+            print("Maximum frequency Word is:")
+            if final:
+             max_key = max(final, key=lambda k: int(final[k]))  # printing word with the highest frequency
+             print(f"The key with the maximum value is: {max_key}")
+            else:
+                print("No Words Entered")
 
-    final={}                                #empty dictionary
-    for word in new:                        #loop on list
-        occurence=new.count(word)           #using list mehtod to count occurence
-        occurence=str(occurence)
-        words=word
-        final.update({word:occurence})      # updating the word with its total occurence        
-  print("Maximum frequency Word is:")
-  max_key = max(final, key=lambda k: int(final[k]))      # printing word with highest frequency
-  print(f"The key with the maximum value is: {max_key}")
-user_dest_file=input("Enter Destination File Name With Path:")     # taking user input
+            user_dest_file = input("Enter Destination File Name With Path:")  # taking user input
 
-with open (user_dest_file,"w+") as new:
-    for key,value in final.items():       #loop on key pair of dictionary
-      answer=(f"{key}:{value}")    
-      new.write(f"{answer}\n")            #writting in destination file
-    new.seek(0)                             # seek to move cursor to start
-    print(new.read())                    # reading the file
+            with open(user_dest_file, "w+") as new:
+                for key, value in final.items():  # loop on key pair of dictionary
+                    answer = (f"{key}:{value}")
+                    new.write(f"{answer}\n")  # writing in the destination file
+                new.seek(0)  # seek to move the cursor to the start
+                print(new.read())
+
+    except FileNotFoundError:
+        print("File Not Found. You Entered the Wrong Path")
+  
