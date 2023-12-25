@@ -82,7 +82,7 @@ while True:   # APPLY THIS LOOP FOR REMAINING CONDITION SEARCH UPDATE AND SO ON
                       print()      
            if not found:
               print("You Make some mistake check title of books")                     
-          elif choice=="delete":          #APPLY CONDITION FOR DELETE
+          elif choice=="delete":          #APPLY CONDITION FOR DELETEHEre
              fix="title"
              user=input("Enter Title of the book to delete the book:")
              found=False
@@ -115,16 +115,13 @@ while True:   # APPLY THIS LOOP FOR REMAINING CONDITION SEARCH UPDATE AND SO ON
                 file.seek(0)          # seek to move cursor to start
                 print(file.read())     # read afile
              
-
-
-
           elif choice=="end":
            print("App has been closed")
            print("Your complete libraray after that is:")
            print() 
            for check in library:
               for key,value in check.items():
-                 print(f"{key},{value}")
+                 print(f"{key}:{value}")
               print()
               break
            break            #BREAKING THE LOOP
