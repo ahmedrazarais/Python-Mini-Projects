@@ -40,7 +40,7 @@ while True:                      #applying loop for overall conditions
         details={"title":title,"year":year,"director":director} #makingt adictionary
         main.append(details)       #appending in list
         print()
-        for i,movie in enumerate(main):     #printing in standard format
+        for movie in main:     #printing in standard format
             for key,value in movie.items():
                 print(f"{key} : {value}")
             print()
@@ -49,7 +49,7 @@ while True:                      #applying loop for overall conditions
             print("No Movie Data To Display")
         else:
             print("Here Is The Display Of Your Movies:")
-            for i,movie in enumerate(main):          # displaying result
+            for movie in main:          # displaying result
                 for key,value in movie.items():
                     print(f"{key} : {value}")
                 print()
@@ -69,7 +69,7 @@ while True:                      #applying loop for overall conditions
              found=True
              if found:
               print("Updated View After Deleting:")
-              for i,movie in enumerate(main):           #update in standard form
+              for movie in main:           #update in standard form
                 for key,value in movie.items():
                     print(f"{key}:{value}")     
                 print()
@@ -109,21 +109,21 @@ while True:                      #applying loop for overall conditions
                     if ask=="title":
                         new_tit=input("Enter The New Title:")
                         check.update({"title":new_tit})
-                        for i,movie in enumerate(main):
+                        for movie in main:
                             for key,value in movie.items():
                                 print(f"{key}:{value}")
                             print()
                     elif ask=="year":
                          new_year=input("Enter The New Year:")
                          check.update({"year":new_year})
-                         for i,movie in enumerate(main):
+                         for movie in main:
                             for key,value in movie.items():
                                 print(f"{key}:{value}")
                             print()
                     elif ask=="director":
                          new_dir=input("Enter The New Director Name:")
                          check.update({"director":new_dir})
-                         for i,movie in enumerate(main):
+                         for movie in main:
                             for key,value in movie.items():
                                 print(f"{key}:{value}")
                             print()
